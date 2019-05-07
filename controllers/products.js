@@ -18,14 +18,13 @@ exports.postAddProduct = (req, res, next) => {
 };
 
 exports.getProducts = (req, res, next) => {
-  Product.fetchAll(products => {
+  Product.fetchAll()
+  .then(([rows, fieldData]) => {console.log(rows)
     res.render('shop', {
-      prods: products,
+      prods: rows,
       pageTitle: 'Shop',
-      path: '/',
-      hasProducts: products.length > 0,
-      activeShop: true,
-      productCSS: true
+      path: '/'
     });
-  });
+  })
+  .catch( err => console.log(err));  
 };
