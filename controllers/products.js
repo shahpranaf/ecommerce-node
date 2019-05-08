@@ -18,10 +18,9 @@ exports.postAddProduct = (req, res, next) => {
 };
 
 exports.getProducts = (req, res, next) => {
-  Product.fetchAll()
-  .then(([rows, fieldData]) => {console.log(rows)
+  Product.findAll().then( products => {
     res.render('shop', {
-      prods: rows,
+      prods: products,
       pageTitle: 'Shop',
       path: '/'
     });
