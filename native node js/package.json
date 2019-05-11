@@ -1,7 +1,7 @@
 {
   "name": "the-complete-guide",
   "version": "1.0.0",
-  "description": "Nodejs Complete guid by Maxmillian",
+  "description": "Nodejs Complete guide by Pranav",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
