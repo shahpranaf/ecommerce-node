@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const PDFDocument = require('pdfkit');
-const stripe = require('stripe')('sk_test_dcTO4fHINsQtQgvixHfoWn2R');
+const stripe = require('stripe')(process.env.STRIPE_KEY);
 
 const Product = require('../models/product');
 const Order = require('../models/order');
@@ -193,7 +193,7 @@ exports.postOrder = (req, res, next) => {
     .then(result => {
       const charge = stripe.charges.create({
         amount: totalSum * 100,
-        currency: 'INR',
+        currency: 'usd',
         description: 'Demo Order',
         source: token,
         metadata: { order_id: result._id.toString() }

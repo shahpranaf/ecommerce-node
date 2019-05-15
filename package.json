@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "description": "Complete Node.js Guide",
   "main": "app.js",
+  "engines": {
+    "node": "10.9.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js",
-    "start-server": "node app.js"
+    "start-dev": "nodemon app.js",
+    "start": "node app.js"
   },
   "author": "Pranav Shah",
   "license": "ISC",
@@ -16,6 +19,7 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
+    "compression": "^1.7.4",
     "connect-flash": "^0.1.1",
     "connect-mongodb-session": "^2.0.3",
     "csurf": "^1.10.0",
@@ -24,8 +28,10 @@
     "express-handlebars": "^3.0.0",
     "express-session": "^1.15.6",
     "express-validator": "^5.3.1",
+    "helmet": "^3.18.0",
     "mongodb": "^3.1.6",
     "mongoose": "^5.2.17",
+    "morgan": "^1.9.1",
     "multer": "^1.4.1",
     "mysql2": "^1.6.1",
     "nodemailer": "^6.1.1",
